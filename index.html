@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <title>Mollis Socks Store (Coming Soon)</title>
+  
+  <meta name="description" content="Mollis Store - Socks ">
+
+  <meta name="tiktok:title" content="Mollis - Coming Soon">
+  <meta name="tiktok:description" content="Mollis Store.">
+  
+  <meta name="instagram:title" content="Mollis - Coming Soon">
+  <meta name="instagram:description" content="Mollis Store">
+  
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #736CDF;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+      position: relative;
+
+      padding-top: env(safe-area-inset-top);
+      padding-right: env(safe-area-inset-right);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+    }
+
+    .content-wrapper {
+      text-align: center;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-links img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .impressum-container {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .impressum-container .tooltip {
+      visibility: hidden;
+      width: 200px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .impressum-container .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 10px;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    }
+
+    .impressum-container:hover .tooltip {
+      visibility: visible;
+    }
+
+    .tooltip a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .tooltip a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      img {
+        max-width: 200px; 
+      }
+
+      .social-links {
+        top: 10px;
+        right: 10px;
+      }
+
+      .social-links img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .impressum-container {
+        bottom: 10px; 
+        left: 10px; 
+      }
+
+      .impressum-container .tooltip {
+        width: 150px; 
+        font-size: 0.9rem;
+        bottom: 35px; 
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <img src="images/icon.svg" alt="Mollis Store" />
+
+    <h1>coming soon</h1>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.tiktok.com/@Mollis.socks" target="_blank" rel="noopener noreferrer">
+      <img src="images/tiktok-icon.svg" alt="TikTok">
+    </a>
+    <a href="https://www.instagram.com/Mollis.socks" target="_blank" rel="noopener noreferrer">
+      <img src="images/instagram-icon.svg" alt="Instagram">
+    </a>
+  </div>
+
+  <div class="impressum-container">
+    impressum
+    <div class="tooltip">
+      Annika Schicha<br>
+      Taborstrasse 8<br>
+      10997 Berlin<br>
+      Deutschland<br>
+      Tel: +49 179 4370589<br>
+      E-Mail: 
+      <a href="mailto:aschicha@posteo.de">aschicha@posteo.de</a>
+    </div>
+  </div>
+</body>
+</html>
