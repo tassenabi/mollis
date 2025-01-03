@@ -119,6 +119,32 @@
       text-decoration: underline;
     }
 
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      z-index: 1000;
+      display: none;
+    }
+
+    #cookie-banner button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      background-color: #736CDF;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #cookie-banner button:hover {
+      background-color: #5c54a4;
+    }
+
     @media (max-width: 480px) {
       h1 {
         font-size: 2rem;
@@ -159,7 +185,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-VE76QPH46N');
+  if (localStorage.getItem("cookie-consent") === "all") {
+    gtag('config', 'G-VE76QPH46N');
+  }
 </script>
 <body>
   <div class="content-wrapper">
@@ -186,8 +214,41 @@
       Deutschland<br>
       Tel: +49 179 4370589<br>
       E-Mail: 
-      <a href="mailto:aschicha@posteo.de">aschicha@posteo.de</a>
+      <a href="mailto:aschicha@posteo.de">aschicha(at)posteo.de</a>
     </div>
   </div>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner">
+    <p>Wir verwenden Cookies, um unsere Website und unseren Service zu optimieren.</p>
+    <button id="accept-cookies">Alle Cookies akzeptieren</button>
+    <button id="decline-cookies">Nur notwendige Cookies</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const cookieBanner = document.getElementById("cookie-banner");
+      const acceptCookies = document.getElementById("accept-cookies");
+      const declineCookies = document.getElementById("decline-cookies");
+
+      // Check localStorage for consent status
+      if (!localStorage.getItem("cookie-consent")) {
+        cookieBanner.style.display = "block";
+      }
+
+      // Accept all cookies
+      acceptCookies.addEventListener("click", () => {
+        localStorage.setItem("cookie-consent", "all");
+        cookieBanner.style.display = "none";
+        gtag('config', 'G-VE76QPH46N');
+      });
+
+      // Decline cookies
+      declineCookies.addEventListener("click", () => {
+        localStorage.setItem("cookie-consent", "necessary");
+        cookieBanner.style.display = "none";
+      });
+    });
+  </script>
 </body>
 </html>
